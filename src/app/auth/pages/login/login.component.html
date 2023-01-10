@@ -1,0 +1,45 @@
+<div class="content">
+  <div class="container text-center">
+
+    <!-- Logo -->
+    <img src="../../../assets/img/logo.png" class="logo" />
+  
+    <h1>Infinity Web</h1>
+  
+    <div class="body">
+  
+      <!-- Campo para el correo electrónico -->
+      <div class="body-inputs">
+        <mat-form-field appearance="outline">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput placeholder="pat@example.com" required>
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <!-- Campo para la contraseña -->
+      <div class="body-inputs">
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="********" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+  
+      <!-- Botón de iniciar sesión -->
+      <button mat-raised-button
+              class="submit-button"
+              (click)="logIn()">
+              Iniciar sesión
+      </button>
+    </div>
+  
+    <a routerLink="../recuperar-contraseña">¿Olvidaste tu contraseña?</a>
+  </div>
+</div>
+
+  
+  <!-- Ojito: [formControl]="email" -->

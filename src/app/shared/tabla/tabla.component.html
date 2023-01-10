@@ -1,0 +1,24 @@
+<table class="table table-hover">
+    <thead>
+      <tr class="table-header">
+        <th> # </th>
+        <th> Nombre </th>
+        <th> Correo</th>
+        <th> Teléfono</th>
+        <th> Proyecto</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index;">
+        <td> {{ i + 1 }} </td>
+        <td> {{ user.a }} </td>
+        <td> {{ user.b }} </td>
+        <td> {{ user.b }} </td>
+        <td> {{ user.b }} </td>
+        <td>
+          <!--<a [routerLink]="['/clientes', '']"> Ver... </a>-->
+        </td>
+      </tr>
+    </tbody>
+  </table>

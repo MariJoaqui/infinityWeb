@@ -1,0 +1,64 @@
+mat-toolbar, ::ng-deep .mat-toolbar.mat-primary { background: rgb(0, 95, 98); }
+
+.side-menu { width: 15rem; }
+
+.right-button { margin-left: auto; }
+
+.white-text { color: #fff; }
+
+.section-name { margin-left: 1rem; }
+
+.container { padding-top: 1.5rem; }
+
+.profileOptions {
+  width: 15rem;
+  height: auto;
+  position: absolute;
+  z-index: 5;
+}
+
+.user-icon { background: #dddddd; }
+
+.user-icon div {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 5rem;
+  background: #000;
+  border: #338b85 0.2rem solid;
+  margin-top: 3rem;
+}
+
+.user-icon mat-icon {
+  color: #fff;
+  padding: 0.2rem 0 0 0.1rem;
+}
+
+.user-type {
+  background: #dddddd;
+  padding: 5rem 1rem 1rem 1rem;
+}
+
+.user-type p { color: #000; }
+
+.user-name {
+  background: #338b85;
+  padding: 0.5rem;
+}
+
+.user-name p { color: #fff; }
+
+.user-options {
+  width: 100%;
+  background: rgb(32, 32, 32);
+  margin: 0;
+}
+
+.user-options .col { 
+  padding: 0.2rem 0 0.2rem 0;
+  border: #000 0.1rem solid; 
+  cursor: pointer;
+}
+
+.user-options .col:hover { background: rgb(0, 0, 0); }
+
+.user-options a { color: #ffffff; }

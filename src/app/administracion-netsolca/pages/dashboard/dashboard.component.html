@@ -1,0 +1,84 @@
+<mat-sidenav-container fullscreen>
+
+  <!-- Opciones del menú -->
+  <mat-sidenav #sidenav mode="push">
+    <mat-toolbar class="side-menu">
+      <span class="white-text">Menú</span>
+
+      <button mat-icon-button
+              (click)="sidenav.toggle()"
+              class="right-button white-text">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a *ngFor="let sectionName of sectionNames"
+         [routerLink]="[sectionName.link]"
+         mat-list-item
+         (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>
+          {{ sectionName.icon }}
+        </mat-icon>
+        <span class="section-name">
+          {{ sectionName.name }}
+        </span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Dashboard -->
+  <mat-toolbar>
+    <!-- Botón para abrir el menú -->
+    <button mat-icon-button
+            (click)="sidenav.toggle()"
+            class="white-text"> 
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-button
+            (click)="profileOptions()"
+            class="right-button white-text">
+      Usuario
+    </button>
+  </mat-toolbar>
+
+  <!-- Menú del usuario -->
+  <div *ngIf="open === 1"
+       class="profileOptions end-0 text-center">
+
+    <!-- Icono -->
+    <div class="user-icon">
+      <div class="position-absolute start-50 translate-middle">
+        <mat-icon>manage_accounts</mat-icon>
+      </div>
+    </div>
+
+    <!-- Tipo de usuario -->
+    <div class="user-type">
+      <p>Administrador</p>
+    </div>
+
+    <!-- Nombre de usuario -->
+    <div class="user-name">
+      <p>Fulano Detal</p>
+    </div>
+
+    <!-- Opciones -->
+    <div class="user-options row">
+      <div class="col">
+        <a routerLink="perfil" 
+           (click)="close()">Perfil</a>
+      </div>
+      <div class="col">
+        <a routerLink="">Cerrar Sesión</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donde se muestran los componentes -->
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>
